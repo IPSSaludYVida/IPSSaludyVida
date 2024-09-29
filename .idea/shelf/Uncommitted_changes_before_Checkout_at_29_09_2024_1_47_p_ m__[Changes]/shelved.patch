@@ -1,0 +1,173 @@
+Index: clinica/models.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>from django.db import models\r\n\r\n\r\n\r\nclass Ocupacion(models.Model):\r\n    codOcupacion = models.CharField(max_length=4, primary_key=True)\r\n    desOcupacion = models.CharField(max_length=200)\r\n    padre = models.IntegerField()\r\n\r\n    class Meta:\r\n        db_table = 'ocupacion'\r\n\r\n    def __str__(self):\r\n        return f\"{self.codOcupacion}, {self.desOcupacion}\"\r\n\r\nclass PrestadoresSalud(models.Model):\r\n    codPrestadorSalud = models.CharField(max_length=12, primary_key=True)\r\n    prestadoresSalud = models.CharField(max_length=12)\r\n\r\n    class Meta:\r\n        db_table = 'prestadoresSalud'\r\n\r\n    def __str__(self):\r\n        return f\"{self.codPrestadores}, {self.prestadoresSalud}\"\r\n\r\n\r\n\r\nclass VoluntaAnticipada(models.Model):\r\n    VOLUNTAD = [\r\n        ('01', 'Si'),\r\n        ('02', 'No')\r\n    ]\r\n    idVoluntad = models.CharField(max_length=2, primary_key=True)\r\n    docVoluntad = models.CharField(max_length=200, choices=VOLUNTAD)\r\n    fecha = models.DateField(max_length=10)\r\n    codPrestadorSalud =models.ForeignKey(PrestadoresSalud,max_length=12, on_delete=models.CASCADE)\r\n\r\n    class Meta:\r\n        db_table = 'voluntaAnticipada'\r\n\r\n    def __str__(self):\r\n        return f\"{self.idVoluntad}, {self.docVoluntad} {self.fecha} {self.codPrestadorSalud}\"\r\n\r\nclass Triage(models.Model):\r\n    TRIAGE = [\r\n        ('01', 'TRIAGE I'),\r\n        ('02', 'TRIAGE II'),\r\n        ('03', 'TRIAGE III'),\r\n        ('04', 'TRIAGE IV'),\r\n        ('05', 'TRIAGE V'),\r\n    ]\r\n    idTriage = models.AutoField(primary_key=True)\r\n    fechaTriage = models.DateField()\r\n    horaTriage = models.TimeField()\r\n    ClasificacionTriage = models.CharField('Clasificacion de triage',max_length=2, choices= TRIAGE )\r\n\r\n    class Meta:\r\n        db_table = 'triage'\r\n\r\n    def __str__(self):\r\n        return f\"{self.idTriage}, {self.horaTriage}, {self.ClasificacionTriage}\"\r\n\r\nclass ModalidadServicios(models.Model):\r\n    codModalidadServicios = models.CharField(max_length=2, primary_key=True)\r\n    ModalidadServicios = models.CharField(max_length=100,unique=True,null=True,blank=True)\r\n\r\n    class Meta:\r\n        db_table = 'modalidadServicios'\r\n\r\n    def __str__(self):\r\n        return f\"{self.codModalidadServicios}, {self.ModalidadServicios}\"\r\n\r\n\r\n\r\n\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/clinica/models.py b/clinica/models.py
+--- a/clinica/models.py	
++++ b/clinica/models.py	
+@@ -1,76 +1,3 @@
+ from django.db import models
+ 
+-
+-
+-class Ocupacion(models.Model):
+-    codOcupacion = models.CharField(max_length=4, primary_key=True)
+-    desOcupacion = models.CharField(max_length=200)
+-    padre = models.IntegerField()
+-
+-    class Meta:
+-        db_table = 'ocupacion'
+-
+-    def __str__(self):
+-        return f"{self.codOcupacion}, {self.desOcupacion}"
+-
+-class PrestadoresSalud(models.Model):
+-    codPrestadorSalud = models.CharField(max_length=12, primary_key=True)
+-    prestadoresSalud = models.CharField(max_length=12)
+-
+-    class Meta:
+-        db_table = 'prestadoresSalud'
+-
+-    def __str__(self):
+-        return f"{self.codPrestadores}, {self.prestadoresSalud}"
+-
+-
+-
+-class VoluntaAnticipada(models.Model):
+-    VOLUNTAD = [
+-        ('01', 'Si'),
+-        ('02', 'No')
+-    ]
+-    idVoluntad = models.CharField(max_length=2, primary_key=True)
+-    docVoluntad = models.CharField(max_length=200, choices=VOLUNTAD)
+-    fecha = models.DateField(max_length=10)
+-    codPrestadorSalud =models.ForeignKey(PrestadoresSalud,max_length=12, on_delete=models.CASCADE)
+-
+-    class Meta:
+-        db_table = 'voluntaAnticipada'
+-
+-    def __str__(self):
+-        return f"{self.idVoluntad}, {self.docVoluntad} {self.fecha} {self.codPrestadorSalud}"
+-
+-class Triage(models.Model):
+-    TRIAGE = [
+-        ('01', 'TRIAGE I'),
+-        ('02', 'TRIAGE II'),
+-        ('03', 'TRIAGE III'),
+-        ('04', 'TRIAGE IV'),
+-        ('05', 'TRIAGE V'),
+-    ]
+-    idTriage = models.AutoField(primary_key=True)
+-    fechaTriage = models.DateField()
+-    horaTriage = models.TimeField()
+-    ClasificacionTriage = models.CharField('Clasificacion de triage',max_length=2, choices= TRIAGE )
+-
+-    class Meta:
+-        db_table = 'triage'
+-
+-    def __str__(self):
+-        return f"{self.idTriage}, {self.horaTriage}, {self.ClasificacionTriage}"
+-
+-class ModalidadServicios(models.Model):
+-    codModalidadServicios = models.CharField(max_length=2, primary_key=True)
+-    ModalidadServicios = models.CharField(max_length=100,unique=True,null=True,blank=True)
+-
+-    class Meta:
+-        db_table = 'modalidadServicios'
+-
+-    def __str__(self):
+-        return f"{self.codModalidadServicios}, {self.ModalidadServicios}"
+-
+-
+-
+-
+-
++# Create your models here.
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"b9ad3342-7362-45fc-9e0d-7eed14c81958\" name=\"Changes\" comment=\"Creacion de los modelos ocupacion, prestadoressalud, Voluntad anticipada, Triage y modalidadServicios.&#10;&#10;Tambien agregue en settings.py el nombre de clinica y ipssaludyvida\" />\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"DjangoConsoleOptions\" custom-start-script=\"import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)\">\r\n    <option name=\"myCustomStartScript\" value=\"import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Python Script\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_BRANCH_BY_REPOSITORY\">\r\n      <map>\r\n        <entry key=\"$PROJECT_DIR$\" value=\"testing\" />\r\n      </map>\r\n    </option>\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"GitHubPullRequestSearchHistory\">{\r\n  &quot;lastFilter&quot;: {\r\n    &quot;state&quot;: &quot;OPEN&quot;,\r\n    &quot;assignee&quot;: &quot;josemtcs&quot;\r\n  }\r\n}</component>\r\n  <component name=\"GitHubPullRequestState\">{\r\n  &quot;prStates&quot;: [\r\n    {\r\n      &quot;id&quot;: {\r\n        &quot;id&quot;: &quot;PR_kwDOM1BI9s58_Qlz&quot;,\r\n        &quot;number&quot;: 2\r\n      },\r\n      &quot;lastSeen&quot;: 1727525612830\r\n    }\r\n  ]\r\n}</component>\r\n  <component name=\"GithubPullRequestsUISettings\">{\r\n  &quot;selectedUrlAndAccountId&quot;: {\r\n    &quot;url&quot;: &quot;https://github.com/cxrlosTwenty/IPSSaludyVida.git&quot;,\r\n    &quot;accountId&quot;: &quot;3bcb2b46-37b7-45b4-9bf5-e292d946a19e&quot;\r\n  }\r\n}</component>\r\n  <component name=\"ProjectColorInfo\">{\r\n  &quot;associatedIndex&quot;: 2\r\n}</component>\r\n  <component name=\"ProjectId\" id=\"2mNkXlDhH4KPIcFUaqKG4Vyx32c\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">{\r\n  &quot;keyToString&quot;: {\r\n    &quot;RunOnceActivity.OpenDjangoStructureViewOnStart&quot;: &quot;true&quot;,\r\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\r\n    &quot;RunOnceActivity.pycharm.django.structure.promotion.once.per.project&quot;: &quot;true&quot;,\r\n    &quot;git-widget-placeholder&quot;: &quot;feature/modelos-jose&quot;,\r\n    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,\r\n    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,\r\n    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,\r\n    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,\r\n    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,\r\n    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,\r\n    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,\r\n    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;\r\n  }\r\n}</component>\r\n  <component name=\"RunManager\">\r\n    <configuration name=\"IPSSaludYVida\" type=\"Python.DjangoServer\" factoryName=\"Django server\">\r\n      <module name=\"IPSSaludYVida\" />\r\n      <option name=\"ENV_FILES\" value=\"\" />\r\n      <option name=\"INTERPRETER_OPTIONS\" value=\"\" />\r\n      <option name=\"PARENT_ENVS\" value=\"true\" />\r\n      <envs>\r\n        <env name=\"PYTHONUNBUFFERED\" value=\"1\" />\r\n      </envs>\r\n      <option name=\"SDK_HOME\" value=\"\" />\r\n      <option name=\"WORKING_DIRECTORY\" value=\"\" />\r\n      <option name=\"IS_MODULE_SDK\" value=\"true\" />\r\n      <option name=\"ADD_CONTENT_ROOTS\" value=\"true\" />\r\n      <option name=\"ADD_SOURCE_ROOTS\" value=\"true\" />\r\n      <option name=\"launchJavascriptDebuger\" value=\"false\" />\r\n      <option name=\"port\" value=\"8000\" />\r\n      <option name=\"host\" value=\"localhost\" />\r\n      <option name=\"additionalOptions\" value=\"\" />\r\n      <option name=\"browserUrl\" value=\"\" />\r\n      <option name=\"runTestServer\" value=\"false\" />\r\n      <option name=\"runNoReload\" value=\"false\" />\r\n      <option name=\"useCustomRunCommand\" value=\"false\" />\r\n      <option name=\"customRunCommand\" value=\"\" />\r\n      <method v=\"2\" />\r\n    </configuration>\r\n  </component>\r\n  <component name=\"SharedIndexes\">\r\n    <attachedChunks>\r\n      <set>\r\n        <option value=\"bundled-js-predefined-1d06a55b98c1-0b3e54e931b4-JavaScript-PY-241.18034.82\" />\r\n        <option value=\"bundled-python-sdk-975db3bf15a3-2767605e8bc2-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-241.18034.82\" />\r\n      </set>\r\n    </attachedChunks>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"b9ad3342-7362-45fc-9e0d-7eed14c81958\" name=\"Changes\" comment=\"\" />\r\n      <created>1726924462394</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1726924462394</updated>\r\n      <workItem from=\"1726924463733\" duration=\"467000\" />\r\n      <workItem from=\"1727491254940\" duration=\"192000\" />\r\n      <workItem from=\"1727491458978\" duration=\"732000\" />\r\n      <workItem from=\"1727523002344\" duration=\"336000\" />\r\n      <workItem from=\"1727526299427\" duration=\"52000\" />\r\n      <workItem from=\"1727526412897\" duration=\"140000\" />\r\n      <workItem from=\"1727528516739\" duration=\"302000\" />\r\n      <workItem from=\"1727528845722\" duration=\"6000\" />\r\n      <workItem from=\"1727528859881\" duration=\"317000\" />\r\n      <workItem from=\"1727529310408\" duration=\"1749000\" />\r\n      <workItem from=\"1727559168299\" duration=\"407000\" />\r\n      <workItem from=\"1727559785541\" duration=\"4781000\" />\r\n    </task>\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	
++++ b/.idea/workspace.xml	
+@@ -4,7 +4,11 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="b9ad3342-7362-45fc-9e0d-7eed14c81958" name="Changes" comment="Creacion de los modelos ocupacion, prestadoressalud, Voluntad anticipada, Triage y modalidadServicios.&#10;&#10;Tambien agregue en settings.py el nombre de clinica y ipssaludyvida" />
++    <list default="true" id="b9ad3342-7362-45fc-9e0d-7eed14c81958" name="Changes" comment="Comite">
++      <change afterPath="$PROJECT_DIR$/clinica/urls.py" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++    </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+@@ -33,17 +37,6 @@
+     &quot;state&quot;: &quot;OPEN&quot;,
+     &quot;assignee&quot;: &quot;josemtcs&quot;
+   }
+-}</component>
+-  <component name="GitHubPullRequestState">{
+-  &quot;prStates&quot;: [
+-    {
+-      &quot;id&quot;: {
+-        &quot;id&quot;: &quot;PR_kwDOM1BI9s58_Qlz&quot;,
+-        &quot;number&quot;: 2
+-      },
+-      &quot;lastSeen&quot;: 1727525612830
+-    }
+-  ]
+ }</component>
+   <component name="GithubPullRequestsUISettings">{
+   &quot;selectedUrlAndAccountId&quot;: {
+@@ -63,8 +56,7 @@
+   &quot;keyToString&quot;: {
+     &quot;RunOnceActivity.OpenDjangoStructureViewOnStart&quot;: &quot;true&quot;,
+     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+-    &quot;RunOnceActivity.pycharm.django.structure.promotion.once.per.project&quot;: &quot;true&quot;,
+-    &quot;git-widget-placeholder&quot;: &quot;feature/modelos-jose&quot;,
++    &quot;git-widget-placeholder&quot;: &quot;testing&quot;,
+     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+@@ -121,14 +113,6 @@
+       <workItem from="1727491254940" duration="192000" />
+       <workItem from="1727491458978" duration="732000" />
+       <workItem from="1727523002344" duration="336000" />
+-      <workItem from="1727526299427" duration="52000" />
+-      <workItem from="1727526412897" duration="140000" />
+-      <workItem from="1727528516739" duration="302000" />
+-      <workItem from="1727528845722" duration="6000" />
+-      <workItem from="1727528859881" duration="317000" />
+-      <workItem from="1727529310408" duration="1749000" />
+-      <workItem from="1727559168299" duration="407000" />
+-      <workItem from="1727559785541" duration="4781000" />
+     </task>
+     <servers />
+   </component>
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"Black\">\r\n    <option name=\"sdkName\" value=\"Python 3.12 (IPSSaludYVida) (2)\" />\r\n  </component>\r\n  <component name=\"ProjectRootManager\" version=\"2\" project-jdk-name=\"Python 3.10\" project-jdk-type=\"Python SDK\" />\r\n  <component name=\"PyPackaging\">\r\n    <option name=\"earlyReleasesAsUpgrades\" value=\"true\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/misc.xml b/.idea/misc.xml
+--- a/.idea/misc.xml	
++++ b/.idea/misc.xml	
+@@ -3,7 +3,7 @@
+   <component name="Black">
+     <option name="sdkName" value="Python 3.12 (IPSSaludYVida) (2)" />
+   </component>
+-  <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.10" project-jdk-type="Python SDK" />
++  <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.12 (IPSSaludyVida)" project-jdk-type="Python SDK" />
+   <component name="PyPackaging">
+     <option name="earlyReleasesAsUpgrades" value="true" />
+   </component>
