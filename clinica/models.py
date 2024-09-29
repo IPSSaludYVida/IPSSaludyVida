@@ -1,7 +1,5 @@
 from django.db import models
 
-
-
 class Ocupacion(models.Model):
     codOcupacion = models.CharField(max_length=4, primary_key=True)
     desOcupacion = models.CharField(max_length=200)
