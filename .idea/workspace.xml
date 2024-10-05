@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b9ad3342-7362-45fc-9e0d-7eed14c81958" name="Changes" comment="Hola">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_28_09_2024_6_58_a_m___Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_28_09_2024_6_58_a_ m__[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_28_09_2024_6_47_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_28_09_2024_6_47__Changes_.xml" beforeDir="false" />
+    <list default="true" id="b9ad3342-7362-45fc-9e0d-7eed14c81958" name="Changes" comment="Configuracion settings y Url">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/clinica/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/clinica/models.py" afterDir="false" />
     </list>
@@ -30,7 +26,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="feature/newrama-JOSE-MODELOS" />
+        <entry key="$PROJECT_DIR$" value="testing" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -41,12 +37,12 @@
     &quot;assignee&quot;: &quot;josemtcs&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/cxrlosTwenty/IPSSaludyVida.git&quot;,
-    &quot;accountId&quot;: &quot;3bcb2b46-37b7-45b4-9bf5-e292d946a19e&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/cxrlosTwenty/IPSSaludyVida.git",
+    "accountId": "2443f40b-a718-4d53-bc62-dce04c8660a9"
   }
-}</component>
+}]]></component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 2
 }</component>
@@ -55,22 +51,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenDjangoStructureViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;testing&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Desarrollos/appClinica/IPSSaludyVida&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenDjangoStructureViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "feature/rama-modelos-david",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/Desarrollos/appClinica/IPSSaludyVida",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="IPSSaludYVida" type="Python.DjangoServer" factoryName="Django server">
       <module name="IPSSaludYVida" />
@@ -100,8 +96,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-1d06a55b98c1-0b3e54e931b4-JavaScript-PY-241.18034.82" />
-        <option value="bundled-python-sdk-975db3bf15a3-2767605e8bc2-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-241.18034.82" />
+        <option value="bundled-js-predefined-d6986cc7102b-7c0b70fcd90d-JavaScript-PY-242.21829.153" />
+        <option value="bundled-python-sdk-464836ebc622-b74155a9e76b-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-242.21829.153" />
       </set>
     </attachedChunks>
   </component>
@@ -118,8 +114,6 @@
       <workItem from="1727491458978" duration="732000" />
       <workItem from="1727523002344" duration="336000" />
       <workItem from="1727626761658" duration="2314000" />
-      <workItem from="1727827005294" duration="191000" />
-      <workItem from="1728133120609" duration="2012000" />
     </task>
     <task id="LOCAL-00001" summary="Configuracion settings y Url">
       <option name="closed" value="true" />
@@ -129,31 +123,7 @@
       <option name="project" value="LOCAL" />
       <updated>1727525369557</updated>
     </task>
-    <task id="LOCAL-00002" summary="Creacion de los modelos ocupacion, prestadoressalud, Voluntad anticipada, Triage y modalidadServicios.&#10;&#10;Tambien agregue en settings.py el nombre de clinica y ipssaludyvida">
-      <option name="closed" value="true" />
-      <created>1727637199796</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1727637199796</updated>
-    </task>
-    <task id="LOCAL-00003" summary="Creacion de los modelos ocupacion, prestadoressalud, Voluntad anticipada, Triage y modalidadServicios.&#10;&#10;Tambien agregue en settings.py el nombre de clinica y ipssaludyvida">
-      <option name="closed" value="true" />
-      <created>1727637954103</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1727637954103</updated>
-    </task>
-    <task id="LOCAL-00004" summary="Hola">
-      <option name="closed" value="true" />
-      <created>1727638203173</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1727638203173</updated>
-    </task>
-    <option name="localTasksCounter" value="5" />
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -172,8 +142,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Configuracion settings y Url" />
-    <MESSAGE value="Creacion de los modelos ocupacion, prestadoressalud, Voluntad anticipada, Triage y modalidadServicios.&#10;&#10;Tambien agregue en settings.py el nombre de clinica y ipssaludyvida" />
-    <MESSAGE value="Hola" />
-    <option name="LAST_COMMIT_MESSAGE" value="Hola" />
+    <option name="LAST_COMMIT_MESSAGE" value="Configuracion settings y Url" />
   </component>
 </project>
