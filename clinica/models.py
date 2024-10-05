@@ -68,7 +68,7 @@ class PrestadoresSalud(models.Model):
         db_table = 'prestadoresSalud'
 
     def __str__(self):
-        return f"{self.codPrestadores}, {self.prestadoresSalud}"
+        return f"{self.codPrestadorSalud}, {self.prestadoresSalud}"
 
 
 
