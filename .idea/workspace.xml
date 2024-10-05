@@ -4,10 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b9ad3342-7362-45fc-9e0d-7eed14c81958" name="Changes" comment="Comite">
-      <change afterPath="$PROJECT_DIR$/clinica/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="b9ad3342-7362-45fc-9e0d-7eed14c81958" name="Changes" comment="Configuracion settings y Url">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_28_09_2024_6_58_a_m___Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_28_09_2024_6_58_a_ m__[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_28_09_2024_6_47_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_28_09_2024_6_47__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clinica/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/clinica/models.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,7 +44,7 @@
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/cxrlosTwenty/IPSSaludyVida.git&quot;,
-    &quot;accountId&quot;: &quot;3bcb2b46-37b7-45b4-9bf5-e292d946a19e&quot;
+    &quot;accountId&quot;: &quot;baee73d8-9530-4e1f-953f-e0193a6797d2&quot;
   }
 }</component>
   <component name="ProjectColorInfo">{
@@ -56,8 +59,9 @@
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.OpenDjangoStructureViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;testing&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;feature/rama-modelos-carlos&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Desarrollos/appClinica/IPSSaludyVida&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -113,7 +117,19 @@
       <workItem from="1727491254940" duration="192000" />
       <workItem from="1727491458978" duration="732000" />
       <workItem from="1727523002344" duration="336000" />
+      <workItem from="1727626761658" duration="2314000" />
+      <workItem from="1728133100965" duration="3433000" />
+      <workItem from="1728151315180" duration="1095000" />
     </task>
+    <task id="LOCAL-00001" summary="Configuracion settings y Url">
+      <option name="closed" value="true" />
+      <created>1727525369557</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1727525369557</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -129,5 +145,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Configuracion settings y Url" />
+    <option name="LAST_COMMIT_MESSAGE" value="Configuracion settings y Url" />
   </component>
 </project>

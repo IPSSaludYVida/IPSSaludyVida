@@ -122,3 +122,38 @@ class Diagnostico(models.Model):
 
     class Meta:
         db_table = 'diagnostico'
+
+    def __str__(self):
+        return f"{self.codDiagnostico}, {self.diagnostico}"
+
+
+class CausaAtencion(models.Model):
+    codCausaAtencion = models.CharField(primary_key=True, max_length=2),
+    causaAtencion = models.CharField(max_length=200)
+
+    class Meta:
+        db_table = 'causaAtencion'
+
+    def __str__(self):
+        return f"{self.codCausaAtencion}, {self.causaAtencion}"
+
+class TipoDocumentos(models.Model):
+    idTipoDocumento = models.CharField(primary_key=True, max_length=2)
+    descripcionDocumento = models.CharField(max_length=100)
+
+    class Meta:
+        db_table = 'tipoDocumento'
+
+    def __str__(self):
+        return f"{self.idTipoDocumento}, {self.descripcionDocumento}"
+
+class DepartamentoMunicipio(models.Model):
+    codDepartamentoMunicipio = models.CharField(primary_key=True, max_length=6),
+    departamentoMunicipio = models.CharField(max_length=200),
+    padre = models.IntegerField(max_length=3)
+
+    class Meta:
+        db_table = 'departamentoMunicipio'
+
+    def __str__(self):
+        return f"{self.padre}, {self.codDepartamentoMunicipio}, {self.departamentoMunicipio}"
