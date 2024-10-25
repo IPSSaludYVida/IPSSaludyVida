@@ -2,7 +2,7 @@ from django.db import models
 
 
 class OpocisionDonacion(models.Model):
-    idDonacion = models.IntegerField(primary_key=True)
+    idDonacion = models.AutoField(primary_key=True)
     Choise_manifestacion = {
         '01': 'Si',
         '02': 'No',
@@ -17,6 +17,11 @@ class OpocisionDonacion(models.Model):
 
     def __str__(self):
         return f"{self.idDonacion}, {self.manifestacionOpo} ,{str(self.fechaDonacion),}"
+
+    def get_usuario(self):
+        return Usuario.objects.filter(donacion=self).first()
+
+    get_usuario.short_description = 'Usuario'
 
 
 class ComunidadEtnia(models.Model):
@@ -91,7 +96,7 @@ class PrestadoresSalud(models.Model):
         verbose_name_plural = 'Prestadores de Salud'
 
     def __str__(self):
-        return f"{self.codPrestadorSalud}, {self.prestadoresSalud}"
+        return f"{self.prestadoresSalud}"
 
 
 
@@ -113,6 +118,9 @@ class VoluntaAnticipada(models.Model):
     def __str__(self):
         return f"{self.idVoluntad}, {self.docVoluntad} {self.fecha} {self.codPrestadorSalud}"
 
+    def get_usuario(self):
+        return Usuario.objects.filter(voluntad=self).first()
+
 class Triage(models.Model):
     TRIAGE = [
         ('01', 'TRIAGE I'),
@@ -132,7 +140,10 @@ class Triage(models.Model):
         verbose_name_plural = 'Triages'
 
     def __str__(self):
-        return f"{self.idTriage}, {self.horaTriage}, {self.ClasificacionTriage}"
+        return f"{self.fechaTriage}/{self.horaTriage} - {self.ClasificacionTriage}"
+
+    def get_servicio(self):
+        return Servicio.objects.filter(triage=self).first()
 
 
 class Diagnostico(models.Model):
@@ -146,11 +157,11 @@ class Diagnostico(models.Model):
         verbose_name_plural = 'Diagnosticos'
 
     def __str__(self):
-        return f"{self.codDiagnostico}, {self.diagnostico}"
+        return f"{self.codDiagnostico}-{self.diagnostico}"
 
 
 class CausaAtencion(models.Model):
-    codCausaAtencion = models.CharField(primary_key=True, max_length=2),
+    codCausaAtencion = models.IntegerField(primary_key=True)
     causaAtencion = models.CharField(max_length=200)
 
     class Meta:
@@ -159,7 +170,7 @@ class CausaAtencion(models.Model):
         verbose_name_plural = 'Causas de Atención'
 
     def __str__(self):
-        return f"{self.codCausaAtencion}, {self.causaAtencion}"
+        return f"{self.codCausaAtencion}-{self.causaAtencion}"
 
 class TipoDocumentos(models.Model):
     idTipoDocumento = models.CharField(primary_key=True, max_length=2)
@@ -319,3 +330,6 @@ class Servicio(models.Model):
         db_table = 'servicio'
         verbose_name = 'Servicio'
         verbose_name_plural = 'Servicios de Salud'
+
+    def __str__(self):
+        return f"{self.idServicioSalud} - {self.usuario}"
