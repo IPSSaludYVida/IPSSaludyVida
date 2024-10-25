@@ -65,7 +65,7 @@ class EntidadSalud(models.Model):
         verbose_name_plural = 'Entidades de Salud'
 
     def __str__(self):
-        return f"{self.codEntidad} - {self.nomEntidad}"
+        return f"{self.nomEntidad}"
 
 
 class Ocupacion(models.Model):
@@ -138,7 +138,7 @@ class Triage(models.Model):
 class Diagnostico(models.Model):
     codDiagnostico = models.CharField(primary_key=True, max_length=4)
     diagnostico = models.CharField(max_length=200)
-    padre = models.IntegerField()
+    padre = models.CharField(max_length=3)
 
     class Meta:
         db_table = 'diagnostico'
@@ -211,9 +211,10 @@ class Usuario(models.Model):
     }
     ident_genero = models.CharField(max_length=2, choices=Choise_Identidad)
     ocupacion = models.ForeignKey(Ocupacion, on_delete=models.RESTRICT)
+    discapacidad = models.ManyToManyField(Discapacidades,related_name='discapacidad_usuario', blank=True)
     donacion = models.ForeignKey(OpocisionDonacion, on_delete=models.RESTRICT)
     voluntad = models.ForeignKey(VoluntaAnticipada, on_delete=models.RESTRICT)
-    nacionalidad = models.ForeignKey(Pais, related_name='nacionalidad_usuario', on_delete=models.RESTRICT)
+    nacionalidad = models.ManyToManyField(Pais, related_name='nacionalidad_usuario', blank=True)
     pais_residencia = models.ForeignKey(Pais, related_name='pais_usuario', on_delete=models.RESTRICT, null=True)
     departamento_municipio = models.ForeignKey(DepartamentoMunicipio, on_delete=models.RESTRICT)
     comunidad_etnia = models.ForeignKey(ComunidadEtnia, on_delete=models.RESTRICT)
@@ -256,18 +257,6 @@ class UsuarioPais(models.Model):
     def __str__(self):
         return f"{self.idUsuario}, {self.idPais}"
 
-class UsuarioDiscapacidad(models.Model):
-    idUsuarioDiscapacidad = models.AutoField(primary_key=True)
-    discapacidad = models.ForeignKey(Discapacidades, on_delete=models.RESTRICT)
-    usuario = models.ForeignKey(Usuario, on_delete=models.RESTRICT)
-
-    class Meta:
-        db_table = 'usuario_discapacidad'
-        verbose_name = 'Usuario Discapacidad'
-        verbose_name_plural = 'Usuarios Discapacidad'
-
-    def __str__(self):
-        return f"{self.usuario}, {self.discapacidad}"
 
 class ViaIngresoServicio(models.Model):
     idViaIngresoServicio = models.IntegerField(primary_key=True)
