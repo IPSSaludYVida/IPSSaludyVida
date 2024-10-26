@@ -6,9 +6,7 @@ from django.views.generic import TemplateView
 
 
 from django.views.generic import ListView
-from django.views.generic import ListView, CreateView
 
-from clinica.forms import UsuariosForm
 from clinica.models import Usuario
 
 
@@ -31,18 +29,7 @@ class ServicioPaciente(TemplateView):
     def get(self, request, *args, **kwargs):
         return render(request, self.template_name)
 
-
-
-
-
-
-
 class ListaPacientes(ListView):
     model = Usuario
     template_name = 'pacientes/pacientes.html'
     context_object_name = 'pacientes'
-
-class CreatePaciente(CreateView):
-    model = Usuario
-    form_class = UsuariosForm
-

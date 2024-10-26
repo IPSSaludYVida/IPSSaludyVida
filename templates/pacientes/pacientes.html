@@ -53,12 +53,5 @@
             <h1>No hay datos de los pacientes</h1>
         {% endif %}
     </div>
-
-    <form method="POST">
-        {% csrf_token %}
-            {{ form.as_p }}
-            <button type="button" class="btn btn-danger">Cancelar</button>
-            <button type="submit" class="btn btn-primary">Confirmar</button>
-    </form>
 {% endblock %}
 
