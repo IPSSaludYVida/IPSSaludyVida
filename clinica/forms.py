@@ -169,3 +169,85 @@ class UsuariosForm(forms.ModelForm):
                 }
             )
         }
+class ServicioForm(forms.ModelForm):
+    class Meta:
+        model = Servicio
+        fields=['prestador_salud','fecha_atencion','hora_atencion','modalidad_servicio','grupo_servicio','via_ingreso','entorno_atencion',
+                'causa_atencion','triage','diagnostico',]
+
+        labels={
+
+            'prestador_salud':'Prestador salud',
+            'fecha_atencion':'Fecha atencion',
+            'hora_atencion':'Hora atencion',
+            'modalidad_servicio':'Modalidad de servicio',
+            'grupo_servicio':'Elige un grupo de servicio',
+            'via_ingreso':'Via ingreso',
+            'entorno_atencion':'Entorno atencion',
+            'causa_atencion':'Causa atencion',
+            'triage':'Triage',
+            'diagnostico':'Diagnostico',
+
+        }
+
+        widgets ={
+            'prestador_salud': forms.Select(
+                attrs={
+                    'class': 'form-control',
+                }
+            ),
+            'fecha_atencion': forms.DateTimeInput(
+                attrs={
+                    'class': 'form-control',
+                    'tipo': 'date-local',
+                    'maximo': datetime.now().strftime('%d/%m/%Y'),
+                }
+            ),
+            'hora_atencion': forms.DateTimeInput(
+                attrs={
+                    'class': 'form-control',
+                    'tipo': 'time-local',
+                    'maximo': datetime.now().strftime('%H:%M'),
+                }
+            ),
+            'modalidad_servicio': forms.Select(
+                attrs={
+                    'class': 'form-control',
+                }
+            ),
+            'grupo_servicio': forms.Select(
+                attrs={
+                    'class': 'form-control',
+                }
+            ),
+            'via_ingreso': forms.Select(
+                attrs={
+                    'class': 'form-control',
+                }
+            ),
+            'entorno_atencion': forms.Select(
+                attrs={
+                    'class': 'form-control',
+
+                }
+            ),
+            'causa_atencion': forms.Select(
+                attrs={
+                    'class': 'form-control',
+                }
+            ),
+            'triage': forms.Select(
+                attrs={
+                    'class': 'form-control',
+                }
+            ),
+            'diagnostico': forms.Select(
+                attrs={
+                    'class': 'form-control',
+                }
+            ),
+
+
+
+
+        }
