@@ -5,19 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b9ad3342-7362-45fc-9e0d-7eed14c81958" name="Changes" comment="Popo">
-      <change afterPath="$PROJECT_DIR$/static/css/Base.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/css/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/Paciente.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/ServicioPaciente.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/layouts/Base.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/layouts/menu.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_7_10_2024_8_48_p__m___Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_7_10_2024_8_48_p__m___Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/clinica/migrations/0002_alter_usuario_options_usuario_discapacidad_and_more.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/css/stylePacientes.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/layouts/layoutPrincipal.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/pacientes/pacientes.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/IPSSaludYVida/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/IPSSaludYVida/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/IPSSaludYVida/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/IPSSaludYVida/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clinica/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/clinica/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clinica/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/clinica/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clinica/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/clinica/migrations/0001_initial.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clinica/migrations/0002_alter_entidadsalud_codentidad.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/clinica/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/clinica/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/clinica/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/clinica/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/clinica/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/clinica/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,27 +68,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;Django Server.IPSSaludYVida.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenDjangoStructureViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.pycharm.django.structure.promotion.once.per.project&quot;: &quot;true&quot;,
-    &quot;django.template.preview.state&quot;: &quot;SHOW_EDITOR&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;feature-jose&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Desarrollos/appClinica/IPSSaludyVida&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "Django Server.IPSSaludYVida.executor": "Run",
+    "RunOnceActivity.OpenDjangoStructureViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.pycharm.django.structure.promotion.once.per.project": "true",
+    "django.template.preview.state": "SHOW_EDITOR",
+    "git-widget-placeholder": "Merging feature-jose",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/Desarrollos/appClinica/IPSSaludyVida",
+    "list.type.of.created.stylesheet": "CSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="IPSSaludYVida" type="Python.DjangoServer" factoryName="Django server">
       <module name="IPSSaludYVida" />
