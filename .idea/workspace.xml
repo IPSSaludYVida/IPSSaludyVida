@@ -4,10 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b9ad3342-7362-45fc-9e0d-7eed14c81958" name="Changes" comment="Comite">
-      <change afterPath="$PROJECT_DIR$/clinica/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="b9ad3342-7362-45fc-9e0d-7eed14c81958" name="Changes" comment="Popo">
+      <change afterPath="$PROJECT_DIR$/clinica/migrations/0002_alter_usuario_options_usuario_discapacidad_and_more.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/css/stylePacientes.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/layouts/layoutPrincipal.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/pacientes/pacientes.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IPSSaludYVida/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/IPSSaludYVida/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IPSSaludYVida/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/IPSSaludYVida/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clinica/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/clinica/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clinica/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/clinica/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clinica/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/clinica/migrations/0001_initial.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clinica/migrations/0002_alter_entidadsalud_codentidad.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/clinica/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/clinica/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clinica/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/clinica/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clinica/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/clinica/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,7 +31,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="CSS File" />
         <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -44,6 +57,9 @@
     &quot;accountId&quot;: &quot;3bcb2b46-37b7-45b4-9bf5-e292d946a19e&quot;
   }
 }</component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/static/css/index.css" root0="SKIP_INSPECTION" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 2
 }</component>
@@ -52,21 +68,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenDjangoStructureViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;testing&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "Django Server.IPSSaludYVida.executor": "Run",
+    "RunOnceActivity.OpenDjangoStructureViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.pycharm.django.structure.promotion.once.per.project": "true",
+    "django.template.preview.state": "SHOW_EDITOR",
+    "git-widget-placeholder": "Merging feature-jose",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/Desarrollos/appClinica/IPSSaludyVida",
+    "list.type.of.created.stylesheet": "CSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="IPSSaludYVida" type="Python.DjangoServer" factoryName="Django server">
       <module name="IPSSaludYVida" />
@@ -75,6 +97,7 @@
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
+        <env name="DJANGO_SETTINGS_MODULE" value="IPSSaludYVida.settings" />
       </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="" />
@@ -113,7 +136,47 @@
       <workItem from="1727491254940" duration="192000" />
       <workItem from="1727491458978" duration="732000" />
       <workItem from="1727523002344" duration="336000" />
+      <workItem from="1727626761658" duration="2314000" />
+      <workItem from="1728350996306" duration="494000" />
+      <workItem from="1729337080924" duration="1764000" />
+      <workItem from="1729340640970" duration="28000" />
+      <workItem from="1729340683753" duration="51000" />
+      <workItem from="1729340814874" duration="43000" />
+      <workItem from="1729340869672" duration="1173000" />
+      <workItem from="1729366099221" duration="16191000" />
+      <workItem from="1729384992347" duration="474000" />
+      <workItem from="1729442508791" duration="759000" />
+      <workItem from="1729812810187" duration="9526000" />
+      <workItem from="1729824030502" duration="208000" />
+      <workItem from="1729825385499" duration="586000" />
+      <workItem from="1729897707940" duration="3563000" />
+      <workItem from="1729901336950" duration="957000" />
     </task>
+    <task id="LOCAL-00001" summary="Configuracion settings y Url">
+      <option name="closed" value="true" />
+      <created>1727525369557</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1727525369557</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Popo">
+      <option name="closed" value="true" />
+      <created>1729339761020</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1729339761020</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Popo">
+      <option name="closed" value="true" />
+      <created>1729825826018</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1729825826018</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -129,5 +192,10 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Configuracion settings y Url" />
+    <MESSAGE value="Popo" />
+    <option name="LAST_COMMIT_MESSAGE" value="Popo" />
   </component>
 </project>

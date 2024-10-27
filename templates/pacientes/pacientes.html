@@ -1,0 +1,57 @@
+{% extends 'layouts/layoutPrincipal.html' %}
+{% load static %}
+{% block content %}
+
+    <div class="tablePage">
+        <div class="add-button">
+            <button class="button-content">
+                <p>Agregar</p>
+            </button>
+        </div>
+        {% if pacientes %}
+        <table class="tableData">
+            <tr>
+                <th scope="col">Primer Nombre</th>
+                <th scope="col">Segundo Nombre</th>
+                <th scope="col">Primer Apellido</th>
+                <th scope="col">Segundo Apellido</th>
+                <th scope="col">Tipo Documento</th>
+                <th scope="col">Numero Documento</th>
+                <th scope="col">EPS</th>
+                <th scope="col">Discapacidades</th>
+                <th scope="col">Acciones</th>
+            </tr>
+            {% for paciente in pacientes %}
+            <tr>
+                <td id="{{ paciente.uuid }}" scope="row">{{ paciente.primer_nombre }}</td>
+                <td>{{ paciente.segundo_nombre }}</td>
+                <td>{{ paciente.primer_apellido }}</td>
+                <td>{{ paciente.segundo_apellido }}</td>
+                <td>{{ paciente.tipo_documento }}</td>
+                <td>{{ paciente.numero_documento }}</td>
+                <td>{{ paciente.entidad }}</td>
+                <td>    {% for disc in paciente.discapacidad.all %}
+                            {{ disc.calDiscapacidad }}{% if not forloop.last %}, {% endif %}
+                        {% empty %}
+                            Sin discapacidades
+                        {% endfor %}
+                </td>
+                <td>
+                    <div class="button-group">
+                        <button class="edit-button">
+                         <ion-icon name="create-outline" class="icon-table"></ion-icon>
+                        </button>
+                         <button class="eliminate-button">
+                            <ion-icon name="trash-outline" class="icon-table"></ion-icon>
+                        </button>
+                    </div>
+                </td>
+                {% endfor %}
+            </tr>
+        </table>
+        {% else %}
+            <h1>No hay datos de los pacientes</h1>
+        {% endif %}
+    </div>
+{% endblock %}
+
