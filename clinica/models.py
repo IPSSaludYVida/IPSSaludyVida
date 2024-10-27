@@ -140,7 +140,7 @@ class Triage(models.Model):
         verbose_name_plural = 'Triages'
 
     def __str__(self):
-        return f"{self.fechaTriage}/{self.horaTriage} - {self.ClasificacionTriage}"
+        return f"{self.fechaTriage}/{self.horaTriage} - {self.get_ClasificacionTriage_display()}"
 
     def get_servicio(self):
         return Servicio.objects.filter(triage=self).first()

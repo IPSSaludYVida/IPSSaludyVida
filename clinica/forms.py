@@ -1,5 +1,5 @@
 from django import forms
-from .models import Usuario, Servicio
+from .models import Usuario, Servicio, Triage
 from datetime import datetime
 
 
@@ -246,8 +246,26 @@ class ServicioForm(forms.ModelForm):
                     'class': 'form-control',
                 }
             ),
-
-
-
-
         }
+
+class ServicioForm2(forms.ModelForm):
+
+    triage = forms.ModelChoiceField(
+        queryset=Triage.objects.all(),
+        widget=forms.Select,
+        required=True
+    )
+
+    class Meta:
+        model = Servicio
+        fields = [
+            'usuario', 'prestador_salud', 'fecha_atencion', 'hora_atencion',
+            'modalidad_servicio', 'grupo_servicio', 'via_ingreso', 'entorno_atencion',
+            'causa_atencion', 'triage', 'diagnostico', 't_diagnostico'
+        ]
+
+        widgets = {
+            'fecha_atencion': forms.DateInput(attrs={'type': 'date'}),
+            'hora_atencion': forms.TimeInput(attrs={'type': 'time'}),
+        }
+

@@ -17,6 +17,11 @@ a {
     text-decoration: none;
     color: black;
 }
+
+.link-enlace {
+    text-decoration: none;
+    color: black;
+}
 /*---------------------*/
 
 /*Estilos barra de navegacion*/
@@ -29,12 +34,10 @@ a {
 
 .navigationBar {
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    gap: 15px;
     border: 1px solid rgb(165, 164, 164);
     border-radius: 30px;
-    padding: 8px 5px 8px 20px;
+    padding: 10px 8px 8px 20px;
     min-width: 85vh;
     background-color: rgb(241, 246, 253);
 }
@@ -42,12 +45,16 @@ a {
 .optionsNav {
     display: flex;
     gap: 5px;
-    align-items: flex-end;
+    justify-content: center;
 }
 
+
 .elementNav {
-    padding: 10px;
+    padding: 10px 8px;
     border-radius: 30px;
+    display: flex;
+    text-align: center;
+    align-items: center;
 }
 
 .elementNav:hover {
@@ -57,10 +64,19 @@ a {
 .elementNav h3 {
     font-size: 14px;
     font-weight: 400;
+    position: relative;
+    top: 1px;
 }
 
 .logoNav {
     font-size: 14px;
+    display: flex;
+    align-items: center;
+}
+
+.logoNav a p {
+    position: relative;
+    top: 5px;
 }
 /**/
 
@@ -81,12 +97,22 @@ a {
 .button-content {
     background-color: #198754;
     width: 100px;
-    height: 35px;
+    height: auto;
+    position: relative;
     border: 0.5px solid rgb(88, 88, 88);
     border-radius: 10px;
     font-size: 14px;
     color: white;
     cursor: pointer;
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    text-align: center;
+}
+
+.button-content p {
+    position: relative;
+    top: 5px;
 }
 
 .button-content:hover {
