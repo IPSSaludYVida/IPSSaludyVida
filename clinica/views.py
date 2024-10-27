@@ -17,14 +17,20 @@ class IndexView(TemplateView):
     def get(self, request, *args, **kwargs):
         return render(request, self.template_name)
 
-class Pacientes(TemplateView):
-    template_name = 'Paciente.html'
+class PacientesIndex(TemplateView):
+    template_name = 'pacientes/index.html'
+
+    def get(self, request, *args, **kwargs):
+        return render(request, self.template_name)
+    
+class PacientesCrear(TemplateView):
+    template_name = 'pacientes/crear.html'
 
     def get(self, request, *args, **kwargs):
         return render(request, self.template_name)
 
-class ServicioPaciente(TemplateView):
-    template_name = 'ServicioPaciente.html'
+class ServiciosIndex(TemplateView):
+    template_name = 'servicios/index.html'
 
     def get(self, request, *args, **kwargs):
         return render(request, self.template_name)
@@ -35,7 +41,7 @@ class ServicioPaciente(TemplateView):
 
 
 
-class ListaPacientes(ListView):
+'''class ListaPacientes(ListView):
     model = Usuario
     template_name = 'pacientes/pacientes.html'
-    context_object_name = 'pacientes'
+    context_object_name = 'pacientes'''
