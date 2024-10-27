@@ -3,10 +3,10 @@ from django.db import models
 
 class OpocisionDonacion(models.Model):
     idDonacion = models.AutoField(primary_key=True)
-    Choise_manifestacion = {
-        '01': 'Si',
-        '02': 'No',
-    }
+    Choise_manifestacion = [
+        ('01', 'Si'),
+        ('02', 'No'),
+    ]
     manifestacionOpo = models.CharField(max_length=2, choices=Choise_manifestacion)
     fechaDonacion = models.DateField(null=True, blank=True)
 
@@ -207,19 +207,19 @@ class Usuario(models.Model):
     segundo_apellido = models.CharField(max_length=60, null=True, blank=True)
     fecha_nacimiento = models.DateField()
     hora_nacimiento = models.TimeField()
-    Choise_Sexo = {
-        "01": "Hombre",
-        "02": "Mujer",
-        "03": "Indeterminado/Intersexsual",
-    }
+    Choise_Sexo =[    
+        ("01", "Hombre"),
+        ("02", "Mujer"),
+        ("03", "Indeterminado/Intersexsual"),
+    ]
     sexo_biologico = models.CharField(max_length=2, choices=Choise_Sexo)
-    Choise_Identidad = {
-        "01": "Masculino",
-        "02": "Feminino",
-        "03": "Transgenero",
-        "04": "Neutro",
-        "05": "No lo declara"
-    }
+    Choise_Identidad = [
+        ("01", "Masculino"),
+        ("02", "Feminino"),
+        ("03", "Transgenero"),
+        ("04", "Neutro"),
+        ("05", "No lo declara")
+    ]
     ident_genero = models.CharField(max_length=2, choices=Choise_Identidad)
     ocupacion = models.ForeignKey(Ocupacion, on_delete=models.RESTRICT)
     discapacidad = models.ManyToManyField(Discapacidades,related_name='discapacidad_usuario', blank=True)
@@ -229,20 +229,20 @@ class Usuario(models.Model):
     pais_residencia = models.ForeignKey(Pais, related_name='pais_usuario', on_delete=models.RESTRICT, null=True)
     departamento_municipio = models.ForeignKey(DepartamentoMunicipio, on_delete=models.RESTRICT)
     comunidad_etnia = models.ForeignKey(ComunidadEtnia, on_delete=models.RESTRICT)
-    Choise_Etnia = {
-        "01": "Indigena",
-        "02": "ROM (Gitanos)",
-        "03": "Raizal (San Andrés y Providencia)",
-        "04": "Palenquero de San Basillo de Palenque",
-        "05": "Negro(a)",
-        "06": "Afrocolombiano(a)",
-        "99": "Ninguna de las anteriores"
-    }
+    Choise_Etnia = [
+        ("01", "Indigena"),
+        ("02", "ROM (Gitanos)"),
+        ("03", "Raizal (San Andrés y Providencia)"),
+        ("04", "Palenquero de San Basillo de Palenque"),
+        ("05", "Negro(a)"),
+        ("06", "Afrocolombiano(a)"),
+        ("99", "Ninguna de las anteriores")
+    ]
     etnia = models.CharField(max_length=2, choices=Choise_Etnia)
-    Choise_Zona = {
-        "01": "Urbana",
-        "02": "Rural",
-    }
+    Choise_Zona = [
+        ("01", "Urbana"),        
+        ("02", "Rural"),
+    ]
     zona_residencia = models.CharField(max_length=2, choices=Choise_Zona)
     entidad = models.ForeignKey(EntidadSalud, on_delete=models.RESTRICT)
 
@@ -287,43 +287,43 @@ class Servicio(models.Model):
     prestador_salud = models.ForeignKey(PrestadoresSalud, on_delete=models.RESTRICT)
     fecha_atencion = models.DateField()
     hora_atencion = models.TimeField()
-    Choise_Modalidad = {
-        "01": "Intramural",
-        "02": "Extramural unidad móvil",
-        "03": "Extramural domiciliaria",
-        "04": "Extramural jornada de salud",
-        "05": "Extramural (atención pre hospitalaria o transporte asistencial)",
-        "06": "Telemedicina interactiva",
-        "07": "Telemedicina no interactiva",
-        "08": "Telemedicina - Telexperticia",
-        "09": "Telemedicina - Telemonitoreo",
-    }
+    Choise_Modalidad = [
+        ("01", "Intramural"),
+        ("02", "Extramural unidad móvil"),
+        ("03", "Extramural domiciliaria"),
+        ("04", "Extramural jornada de salud"),
+        ("05", "Extramural (atención pre hospitalaria o transporte asistencial)"),        
+        ("06", "Telemedicina interactiva"),
+        ("07", "Telemedicina no interactiva"),
+        ("08", "Telemedicina - Telexperticia"),
+        ("09", "Telemedicina - Telemonitoreo"),
+    ]
     modalidad_servicio = models.CharField(max_length=2, choices=Choise_Modalidad)
-    Choise_Grupo = {
-        "01": "Consulta Externa",
-        "02": "Apoyo diagnóstico y complementación terapéutica",
-        "03": "Internación",
-        "04": "Quirúrgico",
-        "05": "Atención Inmediata",
-    }
+    Choise_Grupo = [
+        ("01", "Consulta Externa"),
+        ("02", "Apoyo diagnóstico y complementación terapéutica"),
+        ("03", "Internación"),
+        ("04", "Quirúrgico"),
+        ("05", "Atención Inmediata"),
+    ]
     grupo_servicio = models.CharField(max_length=2, choices=Choise_Grupo)
     via_ingreso = models.ForeignKey(ViaIngresoServicio, on_delete=models.RESTRICT)
-    Choise_Entorno = {
-        "01": "Hogar",
-        "02": "Comunitario",
-        "03": "Escolar",
-        "04": "Laboral",
-        "05": "Institucional",
-    }
+    Choise_Entorno = [
+        ("01", "Hogar"),
+        ("02", "Comunitario"),
+        ("03", "Escolar"),
+        ("04", "Laboral"),
+        ("05", "Institucional"),
+    ]
     entorno_atencion = models.CharField(max_length=2, choices=Choise_Entorno)
     causa_atencion = models.ForeignKey(CausaAtencion, on_delete=models.RESTRICT)
     triage = models.ForeignKey(Triage, on_delete=models.RESTRICT)
     diagnostico = models.ForeignKey(Diagnostico, on_delete=models.RESTRICT)
-    Choise_t_diagnostico = {
-        "01": "Impresión diagnóstica",
-        "02": "Confirmado nuevo",
-        "03": "Confirmado repetido",
-    }
+    Choise_t_diagnostico = [
+        ("01", "Impresión diagnóstica"),
+        ("02", "Confirmado nuevo"),
+        ("03", "Confirmado repetido"),
+    ]
     t_diagnostico = models.CharField(max_length=2, choices=Choise_t_diagnostico)
 
     class Meta:
