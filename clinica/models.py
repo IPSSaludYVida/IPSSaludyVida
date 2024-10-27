@@ -105,7 +105,7 @@ class VoluntaAnticipada(models.Model):
         ('01', 'Si'),
         ('02', 'No')
     ]
-    idVoluntad = models.CharField(max_length=2, primary_key=True)
+    idVoluntad = models.AutoField(primary_key=True)
     docVoluntad = models.CharField(max_length=200, choices=VOLUNTAD)
     fecha = models.DateField(max_length=10, null=True, blank=True)
     codPrestadorSalud =models.ForeignKey(PrestadoresSalud,max_length=12, on_delete=models.RESTRICT, null=True)

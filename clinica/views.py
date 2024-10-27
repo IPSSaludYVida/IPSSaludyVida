@@ -6,7 +6,7 @@ from django.views import View
 from django.views.decorators.csrf import csrf_exempt
 from django.contrib import messages
 
-from .forms import ServicioForm, ServicioForm2
+from .forms import ServicioForm2, UsuarioForm
 from .models import *
 from django.http import HttpResponse, JsonResponse
 from django.views.generic import TemplateView
@@ -88,7 +88,7 @@ def eliminar_servicio(request, id_servicio):
 def editar_servicio(request, id_servicio):
     servicio = get_object_or_404(Servicio, idServicioSalud=id_servicio)
     if request.method == 'POST':
-        form = ServicioForm(request.POST, instance=servicio)
+        form = ServicioForm2(request.POST, instance=servicio)
         if form.is_valid():
             form.save()
             messages.success(request,'Servicio Editado con Exito')
@@ -98,3 +98,53 @@ def editar_servicio(request, id_servicio):
         form = ServicioForm2(instance=servicio)
 
     return render(request, 'servicios/edicion_servicio.html', {'form': form})
+
+def crear_usuario(request):
+
+    if request.method == 'POST':
+        form = UsuarioForm(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Paciente agregado con exito')
+            return redirect('pacientes')
+    else:
+        form = UsuarioForm()
+
+    return render(request, 'pacientes/formulario_paciente.html', {
+        'form': form,
+    })
+
+@csrf_exempt
+def crear_donacion(request):
+    if request.method == 'POST':
+        manifestacion = request.POST.get('manifestacionOpo')
+        fecha = request.POST.get('fechaDonacion')
+        nuevo_donacion = OpocisionDonacion.objects.create(
+            manifestacionOpo=manifestacion,
+            fechaDonacion=fecha
+        )
+        return JsonResponse({
+            'success': True,
+            'id': nuevo_donacion.idDonacion,
+            'manifestacion': nuevo_donacion.get_manifestacionOpo_display()
+        })
+    return JsonResponse({'success': False})
+
+@csrf_exempt
+def crear_voluntad(request):
+    if request.method == 'POST':
+        documento_voluntad = request.POST.get('docVoluntad')
+        fecha = request.POST.get('fecha')
+        prestador_salud = request.POST.get('codPrestadorSalud')
+        nuevo_voluntad = VoluntaAnticipada.objects.create(
+            docVoluntad=documento_voluntad,
+            fecha=fecha,
+            codPrestadorSalud=prestador_salud
+        )
+        return JsonResponse({
+            'success': True,
+            'id': nuevo_voluntad.idVoluntad,
+            'prestador_salud': nuevo_voluntad.codPrestadorSalud
+        })
+
+    return JsonResponse({'success': False})
