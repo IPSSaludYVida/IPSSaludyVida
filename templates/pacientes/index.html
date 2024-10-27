@@ -1,12 +1,12 @@
-{% extends 'layouts/layoutPrincipal.html' %}
+{% extends 'layouts/Base.html' %}
 {% load static %}
 {% block content %}
 
     <div class="tablePage">
         <div class="add-button">
-            <button class="button-content">
-                <p>Agregar</p>
-            </button>
+            <div class="text-right">
+            <button type="button" class="btn btn-secondary">Agregar</button>
+             </div>
         </div>
         {% if pacientes %}
         <table class="tableData">
